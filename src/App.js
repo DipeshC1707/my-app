@@ -40,10 +40,11 @@ function App() {
     <Router>
     <Navbar title="Tiffinx" home="Home" toggleMode={toggleMode} mode={mode}/>
     <Alert alert={alert}/>
-     <div className='container my-3'>
+    <div className='container my-3'>
      <Routes>
+          <Route path="/my-app" element={<TextForm heading="Enter The Text To Edit" mode={mode} alert={alert} showAlert={showAlert}/>}/>
           <Route path="/about" element={<About/>}/>
-          <Route path="/" element={<TextForm heading="Enter The Text To Edit" mode={mode} alert={alert} showAlert={showAlert}/>}/>
+          <Route path="/Home" element={<TextForm heading="Enter The Text To Edit" mode={mode} alert={alert} showAlert={showAlert}/>}/>
       </Routes>
     </div>
     </Router>
