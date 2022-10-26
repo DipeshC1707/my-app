@@ -14,16 +14,16 @@ export default function TextForm(props) {
     </div>
     <p></p>
     <div>
-    <button className='btn btn-outline-danger' onClick={()=>setText(text.toLowerCase())}>Convert LC</button>
+    <button className='btn btn-outline-danger' onClick={()=>{setText(text.toLowerCase());props.showAlert("Converted To Lowercase","success")}}>Convert LC</button>
     </div>
     <p></p>
     <div>
-    <button className='btn btn-outline-primary' onClick={()=>setText("")}>Clear Text</button>
+    <button className='btn btn-outline-primary' onClick={()=>{setText("");props.showAlert("Text Cleared","success")}}>Clear Text</button>
     </div>
     <div className='container my-2' style={{color:props.mode==='dark'?'white':'black'}}>
         <h3>Your Text Sumarry:</h3>
-        <p>{text.split(" ").length} words {text.length} characters</p>
-        <p>{0.008*(text.split(" ").length)} minutes</p>
+        <p>{text.split(/\s+/).filter((element)=>{return element.length!==0;}).length} words {text.length} characters</p>
+        <p>{0.008*(text.split(" ").filter((element)=>{return element.length!==0;}).length)} minutes</p>
         <h1>Preview</h1>
         <p>{text.length>0?text:"Write Something"}</p>
     </div>
