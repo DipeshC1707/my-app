@@ -18,7 +18,7 @@ export default function TextForm(props) {
     </div>
     <p></p>
     <div>
-    <button className='btn btn-outline-primary' onClick={()=>{setText("");props.showAlert("Text Cleared","success")}}>Clear Text</button>
+    <button className='btn btn-outline-primary' onClick={()=>{setText("") ; props.showAlert("Text Cleared","success")}}>Clear Text</button>
     </div>
     <div className='container my-2' style={{color:props.mode==='dark'?'white':'black'}}>
         <h3>Your Text Sumarry:</h3>
